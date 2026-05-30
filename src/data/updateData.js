@@ -1,21 +1,21 @@
 import defaultData from "./defaultData";
+const rawData = [...defaultData]
 
-// function updateData (){
+function addIdToData (data){
 
-//   // id data
-//   const data = defaultData.map(item => ( item.id = defaultData.indexOf(item) + 1 ))
+  // add id key-value to each object item in the array
+  const newData = data.map(item => {
+    const id = data.indexOf(item) + 1 
+    return (
+      item = {
+        id, ...item
+      }
+    )}
+  )
 
-//   // return updated data
-//   return data
-// }
+  // return an array of project objects with ids starting from 1..
+  return newData
+}
 
-const data = defaultData.map(item => {
-  const id = defaultData.indexOf(item) + 1 
-  return (
-    item = {
-      id, ...item
-    }
-  )}
-)
 
-export { data };
+export { rawData, addIdToData};
