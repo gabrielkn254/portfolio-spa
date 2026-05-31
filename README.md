@@ -26,7 +26,7 @@ It is built with react with vite.
 
 - The `projects` state is id(ed) and passed down as prop to the `ProjectsList` component for rendering.
 *Please note: the projects array objects don't have an id key hence it is generated when passing down as prop.*
-*This is make adding and filtering projects easier as well as making cards dynamic*
+*This makes adding and filtering projects easier as well as making cards dynamic*
 
 - ProjectsList component renders `ProjectCards` separate and renders only 1 `ProjectDetails`component only when triggered to improve its efficiency.
   `ProjectsList` manages `ProjectDetails` state `expandedProject`, which stores a `project.id` when `ProjectDetails` is active or `null` when inactive.
@@ -78,7 +78,7 @@ You only a web browser to run this application.
 
 ### execution
 Click this link to open the deployed app
-Link -> 
+Link -> `https://gabrielkn254.github.io/portfolio-spa/`
 
 ## License
 This project is licensed under the MIT License.
