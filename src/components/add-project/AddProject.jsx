@@ -1,35 +1,35 @@
 import React from 'react'
+import "./add-project.css"
 
-function AddProject({onSubmit}) {
+function AddProject({onAddProject}) {
   return (
-    <div className='add-project-box'>
-      <form className='add-project-form' onSubmit={onSubmit}>
-        <div>
-          <label htmlFor="name">Project Title</label>
-          <input
-          type="text"
-          name='name' />
-        </div>
+    
+    <form className='add-project-form' onSubmit={onAddProject}>
+      <div className='name'>
+        <label htmlFor="name">Project Title</label>
+        <input
+        type="text"
+        name='name' />
+      </div>
 
-        <div>
-          <label htmlFor="shortDesc">Short Description</label>
-          <textarea
-          type="text"
-          name='shortDesc'
-          rows={3} />
-        </div>
+      <div className='shortDesc'>
+        <label htmlFor="shortDesc">Short Description</label>
+        <textarea
+        type="text"
+        name='shortDesc'
+        rows={2} />
+      </div>
 
-        <div>
-          <label htmlFor="description">Detailed Description</label>
-          <textarea
-          type="text"
-          name='description'
-          rows={8}/>
-        </div>
+      <div className='description'>
+        <label htmlFor="description">Detailed Description</label>
+        <textarea
+        type="text"
+        name='description'
+        rows={8}/>
+      </div>
 
-        <button type='submit'>Add Project</button>
-      </form>
-    </div>
+      <button type='submit'>Add Project</button>
+    </form>
   )
 }
 

@@ -1,4 +1,4 @@
-const defaultData = [
+const defaultProjects = [
   {
     name: "E-Commerce Checkout Optimization",
     shortDesc: "A redesign of a retail checkout flow that reduced cart abandonment by 25%.",
@@ -25,4 +25,4 @@ const defaultData = [
 
 ]
 
-export default defaultData;
+export default defaultProjects;
