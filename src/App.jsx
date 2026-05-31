@@ -9,27 +9,13 @@ import SearchProject from './components/search-project/SearchProject'
 function App() {
 
   // create projects & searchValue states for dynamically updating & searching
-  const [projects, setProjects] = useState(defaultProjects)
+  const [projects, setProjects] = useState(localStorage.getItem("projects") ? JSON.parse(localStorage.getItem("projects")) : defaultProjects)
   const [searchTerm, setSearchTerm] = useState("")
-  
-  // connect with localStorage for seamless sync
-  useEffect(() => {
-    const storedProjects = localStorage.getItem("projects")
-
-    if(storedProjects){
-      setProjects(JSON.parse(storedProjects))
-    } else {
-      localStorage.setItem("projects", JSON.stringify(defaultProjects))
-      setProjects(defaultProjects)
-    }
-  }, [])
 
   // update localStorage dynamically
   useEffect(() => {
-    if(projects.length > 0 ){
       localStorage.setItem("projects", JSON.stringify(projects))
-    }
-  }, [])
+  }, [projects])
 
   // add a new Project
   const handleAddNewProject = (event) => {
@@ -48,8 +34,6 @@ function App() {
 
     // set newProject to state
     setProjects((prevProjects) => [...prevProjects, newProject])
-
-    console.log(projects)
   
   }
 
@@ -71,8 +55,8 @@ function App() {
       <div className='right-content-box'>
         <SearchProject onSearch={setSearchTerm} />
         { searchTerm != "" && filteredProjects <= 0
-          ? (<p>No Projects found for {searchTerm}</p>)
-          : (<ProjectsList data={addIdToProjects(filteredProjects ? filteredProjects : projects)} />)
+          ? (<p>No Projects found for <strong>"{searchTerm}"</strong></p>)
+          : (<ProjectsList data={addIdToProjects(searchTerm ? filteredProjects : projects)} />)
         }
       </div>
     </div>

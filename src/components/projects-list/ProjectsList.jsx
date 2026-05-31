@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ProjectCard from '../project-card/ProjectCard'
 import ProjectDetails from '../project-details/ProjectDetails'
+import "./projects-list.css"
 
 const ProjectsList = ({ data }) => {
 

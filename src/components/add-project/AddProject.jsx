@@ -9,7 +9,9 @@ function AddProject({onAddProject}) {
         <label htmlFor="name">Project Title</label>
         <input
         type="text"
-        name='name' />
+        name='name'
+        id='name'
+        autoComplete='off' />
       </div>
 
       <div className='shortDesc'>
@@ -17,7 +19,9 @@ function AddProject({onAddProject}) {
         <textarea
         type="text"
         name='shortDesc'
-        rows={2} />
+        id='shortDesc'
+        rows={2}
+        autoComplete='off' />
       </div>
 
       <div className='description'>
@@ -25,7 +29,9 @@ function AddProject({onAddProject}) {
         <textarea
         type="text"
         name='description'
-        rows={8}/>
+        id='description'
+        rows={8}
+        autoComplete='off' />
       </div>
 
       <button type='submit'>Add Project</button>
